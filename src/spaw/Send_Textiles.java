@@ -59,7 +59,7 @@ DBCollection Tex;
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
         getContentPane().add(Te, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 77, -1));
         getContentPane().add(Qu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 50, -1));
 
@@ -98,7 +98,7 @@ DBCollection Tex;
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/shop9.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/truck2.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 300));
 
         pack();

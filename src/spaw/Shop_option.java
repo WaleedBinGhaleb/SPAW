@@ -11,18 +11,17 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.Mongo;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author Ghaleb
  */
-public class Clothes_Items extends javax.swing.JFrame {
+public class Shop_option extends javax.swing.JFrame {
 DB db;
 DBCollection warehouse;
     /**
-     * Creates new form Clothes_Items
+     * Creates new form Shop_option
      */
-    public Clothes_Items() {
+    public Shop_option() {
         Mongo mongo = new Mongo("localhost",27017);
         db=mongo.getDB("Managers");
         warehouse=db.getCollection("warehouse");
@@ -38,21 +37,24 @@ DBCollection warehouse;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         name = new javax.swing.JTextField();
         price = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Text = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 110, -1));
+        getContentPane().add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 80, -1));
 
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -65,34 +67,12 @@ DBCollection warehouse;
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
-
-        name.setToolTipText("Item's name");
-        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 90, -1));
-
-        price.setToolTipText("Insert the new price for the item");
-        getContentPane().add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, -1));
-
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel1.setText("Item Name");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel2.setText("Item's new price");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 620, 245));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
         jButton2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png"))); // NOI18N
-        jButton2.setText("Show Items");
+        jButton2.setText("Show Stock");
         jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +80,35 @@ DBCollection warehouse;
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
+
+        jButton3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Delete.png"))); // NOI18N
+        jButton3.setText("Delete");
+        jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
+
+        Text.setEditable(false);
+        Text.setColumns(20);
+        Text.setRows(5);
+        jScrollPane1.setViewportView(Text);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 660, 200));
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1.setText("Item name");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel2.setText("Price");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 50, 20));
 
         jButton5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,82 +123,106 @@ DBCollection warehouse;
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 30));
 
+        jButton4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Refresh.png"))); // NOI18N
+        jButton4.setText("Refresh");
+        jButton4.setContentAreaFilled(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 120, -1));
+
         jButton6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logout.png"))); // NOI18N
         jButton6.setText("Logout");
         jButton6.setContentAreaFilled(false);
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, -1, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 110, -1));
 
-        jButton7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Refresh.png"))); // NOI18N
-        jButton7.setText("Refresh");
-        jButton7.setContentAreaFilled(false);
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 0, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/shop9.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 620, 410));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/shop11.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 690, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-BasicDBObject newDocument = new BasicDBObject();
-newDocument.append("$set", new BasicDBObject().append("Item_price","'"+price.getText()+"'"));
-
-BasicDBObject searchQuery = new BasicDBObject().append("Item_name", "'"+name.getText()+"'");
- DBCursor cursor = warehouse.find(searchQuery);
-    if (cursor.hasNext()){
-warehouse.update(searchQuery, newDocument);
-JOptionPane.showMessageDialog(null, "Item updated","Message",JOptionPane.WARNING_MESSAGE);
-    } else {
-        JOptionPane.showMessageDialog(null, "Item is not Found","Error",JOptionPane.ERROR_MESSAGE);
-    }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        BasicDBObject whereQuery = new BasicDBObject();
-        whereQuery.put("id","'010'");
+       BasicDBObject whereQuery = new BasicDBObject();
+        whereQuery.put("id","'301'");
         DBCursor cursor=warehouse.find(whereQuery);
         
        while(cursor.hasNext()){
    
-       jTextArea1.setText(jTextArea1.getText()+"\n"+cursor.next()+"\n");
+       Text.setText(Text.getText()+"\n"+cursor.next()+"\n");
        
-       }
+       }     
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      BasicDBObject document = new BasicDBObject();
+        document.put("$set", new BasicDBObject().append("Item_name", "'"+name.getText()+"'").append("Item_price",price.getText()));
+        Update(document,"Item_name","'"+name.getText()+"'");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       BasicDBObject document = new BasicDBObject();
+        document.put("Item_name","'"+name.getText()+"'");
+        DBCursor cursor = warehouse.find(document);
+             if (cursor.hasNext()){
+        Remove(document);
+        JOptionPane.showMessageDialog(null, "Item deleted","Message",JOptionPane.WARNING_MESSAGE);
+             }
+             else{
+                 JOptionPane.showMessageDialog(null, "Item is not Found","Error",JOptionPane.ERROR_MESSAGE);
+             }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.setVisible(false);
-        new Clothes_Manager().setVisible(true);
+        new Shop_Login().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        this.setVisible(false);
+        Clothes_Manager c=new Clothes_Manager();
+        c.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         this.setVisible(false);
         Main_Page c=new Main_Page();
         c.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       this.setVisible(false);
-       Clothes_Items c=new Clothes_Items();
-        c.setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
-
+private void Update(BasicDBObject document, String identifierKey, String identifierValue) {
+       if(document != null){
+            BasicDBObject searchQuery = new BasicDBObject().append(identifierKey, identifierValue);
+            DBCursor cursor = warehouse.find(searchQuery);
+            if (cursor.hasNext()){
+            warehouse.update(searchQuery, document);
+            JOptionPane.showMessageDialog(null, "Item updated","Message",JOptionPane.WARNING_MESSAGE);
+            }
+    }
+        
+}
+    private void Remove(BasicDBObject document) {
+  
+     if(document != null){
+            warehouse.remove(document);
+           
+    }
+     else {
+         JOptionPane.showMessageDialog(null, "Item is not Found","Error",JOptionPane.ERROR_MESSAGE);
+     }
+    }
     /**
      * @param args the command line arguments
      */
@@ -208,35 +240,38 @@ JOptionPane.showMessageDialog(null, "Item updated","Message",JOptionPane.WARNING
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Clothes_Items.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Shop_option.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Clothes_Items.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Shop_option.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Clothes_Items.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Shop_option.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Clothes_Items.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Shop_option.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Clothes_Items().setVisible(true);
+                new Shop_option().setVisible(true);
             }
         });
-    }
+        
+    
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Text;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField price;
     // End of variables declaration//GEN-END:variables
