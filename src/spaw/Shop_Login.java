@@ -52,13 +52,15 @@ DBCollection warehouse;
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Username.png"))); // NOI18N
         jLabel1.setText("Username");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 93, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Password.png"))); // NOI18N
         jLabel2.setText("Password");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 141, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
         getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 90, 91, -1));
         getContentPane().add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 138, 91, -1));
 
@@ -92,6 +94,7 @@ DBCollection warehouse;
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -106,7 +109,7 @@ DBCollection warehouse;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         BasicDBObject whereQuery = new BasicDBObject();
+             BasicDBObject whereQuery = new BasicDBObject();
     whereQuery.put("Username", "'"+user.getText()+"'" );
     whereQuery.put("Password", "'"+Pass.getText()+"'" );
     DBCursor cursor = warehouse.find(whereQuery);
@@ -115,7 +118,7 @@ DBCollection warehouse;
     System.out.println(cursor.hasNext());
     JOptionPane.showMessageDialog(null, "Welcome Sir","Message",JOptionPane.INFORMATION_MESSAGE);
     this.setVisible(false);
-        new Shop_option().setVisible(true);
+        new Shop_Manager().setVisible(true);
     } else {
         JOptionPane.showMessageDialog(null, "Wrong Username & Password","Error",JOptionPane.ERROR_MESSAGE);
     }

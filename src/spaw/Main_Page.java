@@ -94,7 +94,7 @@ public class Main_Page extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.setVisible(false);
-        Factory cw=new Factory();
+        Factory_Login cw=new Factory_Login();
         cw.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 

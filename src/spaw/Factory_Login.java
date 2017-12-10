@@ -19,12 +19,12 @@ import javax.swing.JOptionPane;
  */
 public class Factory_Login extends javax.swing.JFrame {
 DB db;
-DBCollection warehouse;
+DBCollection factory;
     /** Creates new form Factory_Login */
     public Factory_Login() {
         Mongo mongo = new Mongo("localhost",27017);
         db=mongo.getDB("Managers");
-        warehouse=db.getCollection("warehouse");
+        factory=db.getCollection("factory");
         initComponents();
     }
 
@@ -43,65 +43,62 @@ DBCollection warehouse;
         jLabel2 = new javax.swing.JLabel();
         Pass = new javax.swing.JPasswordField();
         jCheckBox1 = new javax.swing.JCheckBox();
+        jButton6 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Login.png"))); // NOI18N
         jButton1.setText("Login");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
+        getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 105, -1));
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Username.png"))); // NOI18N
         jLabel1.setText("Username");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Password.png"))); // NOI18N
         jLabel2.setText("Password");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        getContentPane().add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 105, -1));
 
+        jCheckBox1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jCheckBox1.setText("Show Password");
+        jCheckBox1.setContentAreaFilled(false);
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(User, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                            .addComponent(Pass))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(jCheckBox1)
-                        .addGap(17, 17, 17))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(64, 64, 64))
-        );
+        jButton6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logout.png"))); // NOI18N
+        jButton6.setText("Logout");
+        jButton6.setContentAreaFilled(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 110, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/shop8.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 400, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,18 +115,24 @@ DBCollection warehouse;
          BasicDBObject whereQuery = new BasicDBObject();
     whereQuery.put("Username", "'"+User.getText()+"'" );
     whereQuery.put("Password", "'"+Pass.getText()+"'" );
-    DBCursor cursor = warehouse.find(whereQuery);
+    DBCursor cursor = factory.find(whereQuery);
    
     if(cursor.hasNext()){
     System.out.println(cursor.hasNext());
-    JOptionPane.showMessageDialog(null, "Welcome","Message",JOptionPane.PLAIN_MESSAGE);
+    JOptionPane.showMessageDialog(null, "Welcome Sir","Message",JOptionPane.INFORMATION_MESSAGE);
     this.setVisible(false);
     Factory f=new Factory();
     f.setVisible(true);
     } else {
-        JOptionPane.showMessageDialog(null, "Wrong Username & Password","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Wrong Username or Password","Error",JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        this.setVisible(false);
+        Main_Page c=new Main_Page();
+        c.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,9 +173,11 @@ DBCollection warehouse;
     private javax.swing.JPasswordField Pass;
     private javax.swing.JTextField User;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton6;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
 }

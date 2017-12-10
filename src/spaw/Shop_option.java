@@ -116,6 +116,7 @@ DBCollection warehouse;
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -188,12 +189,12 @@ DBCollection warehouse;
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.setVisible(false);
-        new Shop_Login().setVisible(true);
+        new Shop_Manager().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.setVisible(false);
-        Clothes_Manager c=new Clothes_Manager();
+        Shop_option c=new Shop_option();
         c.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 

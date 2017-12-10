@@ -54,6 +54,7 @@ DBCollection Tex;
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/select.png"))); // NOI18N
         jButton1.setText("Send to Factory");
         jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -79,6 +80,7 @@ DBCollection Tex;
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -91,6 +93,7 @@ DBCollection Tex;
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logout.png"))); // NOI18N
         jButton6.setText("Logout");
         jButton6.setContentAreaFilled(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -118,16 +121,7 @@ DBCollection Tex;
         } else {
             JOptionPane.showMessageDialog(null, "Item is not available","Error",JOptionPane.ERROR_MESSAGE);
         }
-        //        BasicDBObject searchQuery = new BasicDBObject();
-        //        searchQuery.put("Item_name", "'"+Iname.getText()+"'");
-        //        searchQuery.put("Item_price", "'"+Iprice.getText()+"'");
-        //        DBCursor cursor = warehouse.find(searchQuery);
-        //      if (cursor.hasNext()) {
-            //	 warehouse.remove(searchQuery);
-            //         JOptionPane.showMessageDialog(null, "Item sent","Message",JOptionPane.PLAIN_MESSAGE);
-            //      }else {
-            //          JOptionPane.showMessageDialog(null, "Item is not available","Error",JOptionPane.ERROR_MESSAGE);
-            //      }
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
